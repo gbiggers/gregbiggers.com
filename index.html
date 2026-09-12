@@ -126,6 +126,17 @@ decisions, and the deeper work of leadership." />
     float: none !important;
   }
 }
+
+/* "I help bold, ambitious builders..." section uses Squarespace's older
+   classic grid-12 layout instead of Fluid Engine (like every section below
+   it), so it never gets the page gutter Fluid Engine applies via its own
+   CSS grid template. Match that gutter directly using the same site-wide
+   variable Squarespace uses everywhere else. */
+#page-section-67ee5a37a696465965e7f001 {
+  padding-left: var(--sqs-site-gutter);
+  padding-right: var(--sqs-site-gutter);
+  box-sizing: border-box;
+}
 </style>
 
   </head>
