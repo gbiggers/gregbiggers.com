@@ -126,6 +126,36 @@ decisions, and the deeper work of leadership." />
     float: none !important;
   }
 }
+
+/* "I help bold, ambitious builders..." section uses Squarespace's older
+   classic grid-12 layout instead of Fluid Engine (like every section below
+   it), so it never gets the page gutter Fluid Engine applies via its own
+   CSS grid template. Match that gutter directly using the same site-wide
+   variable Squarespace uses everywhere else. */
+#page-section-67ee5a37a696465965e7f001 {
+  padding-left: var(--sqs-site-gutter);
+  padding-right: var(--sqs-site-gutter);
+  box-sizing: border-box;
+}
+
+/* The "CONTINUOUS|..." monospace section labels render a space at the
+   same width as any letter (this font has no narrower space glyph), so
+   two-word labels like "Product Leadership" read with a gap that looks
+   like a typo next to the single-word ones. letter-spacing already adds
+   extra width after every character including the space, compounding
+   it further. word-spacing pulls back just the space, independent of
+   letter-spacing between actual letters. */
+h4[style*="'Roboto Mono', monospace"] {
+  word-spacing: -0.3em;
+}
+
+/* Header nav and footer nav links use the same Roboto Mono site
+   navigation font and exhibit the same oversized space; same fix. */
+.header-nav-item,
+.header-menu-nav-item-content,
+pre code a {
+  word-spacing: -0.3em;
+}
 </style>
 
   </head>
