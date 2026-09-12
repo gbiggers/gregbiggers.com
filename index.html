@@ -137,6 +137,17 @@ decisions, and the deeper work of leadership." />
   padding-right: var(--sqs-site-gutter);
   box-sizing: border-box;
 }
+
+/* The "CONTINUOUS|..." monospace section labels render a space at the
+   same width as any letter (this font has no narrower space glyph), so
+   two-word labels like "Product Leadership" read with a gap that looks
+   like a typo next to the single-word ones. letter-spacing already adds
+   extra width after every character including the space, compounding
+   it further. word-spacing pulls back just the space, independent of
+   letter-spacing between actual letters. */
+h4[style*="'Roboto Mono', monospace"] {
+  word-spacing: -0.3em;
+}
 </style>
 
   </head>
