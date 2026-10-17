@@ -131,10 +131,15 @@ decisions, and the deeper work of leadership." />
    classic grid-12 layout instead of Fluid Engine (like every section below
    it), so it never gets the page gutter Fluid Engine applies via its own
    CSS grid template. Match that gutter directly using the same site-wide
-   variable Squarespace uses everywhere else. The top "CONTINUOUS|..."
-   panels section (effd) is built the same way and needs the same gutter. */
-#page-section-67ee5a37a696465965e7effd,
-#page-section-67ee5a37a696465965e7f001 {
+   variable Squarespace uses everywhere else.
+
+   Every classic grid-12 section has the same problem: .sqs-layout > .sqs-row
+   carries -17px side margins that only cancel out if the section has side
+   padding. Without it the row sticks out 17px past the right edge on
+   phones (iOS Safari then zooms the page out, leaving a white strip) and
+   the content sits flush against the left edge. So apply the gutter to all
+   of them, not just one section. */
+.sqs-layout.sqs-grid-12[data-type="page-section"] {
   padding-left: var(--sqs-site-gutter);
   padding-right: var(--sqs-site-gutter);
   box-sizing: border-box;
