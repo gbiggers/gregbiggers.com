@@ -172,7 +172,7 @@ pre code a {
    Only applies when Squarespace shows the desktop header (not phones / small tablets). */
 .header-cta { display: none; }
 @media only screen and (min-width: 800px) and (pointer: fine), only screen and (min-width: 1025px) {
-  html { scroll-padding-top: var(--v2-header-h, 8rem); scroll-behavior: smooth; }
+  html { scroll-padding-top: 4.5rem; scroll-behavior: smooth; }
   .header { position: fixed; }
   .header-display-desktop {
     display: grid;
@@ -205,6 +205,15 @@ pre code a {
   .header-display-desktop .header-nav-item a[aria-current="true"] {
     border-bottom-color: hsl(var(--accent-hsl));
   }
+  /* Scrolled: drop the title row; labels + button share one slim row. */
+  html.v2-scrolled .header-display-desktop {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "nav cta";
+    column-gap: 2.5rem;
+    row-gap: 0;
+  }
+  html.v2-scrolled .header-display-desktop .header-title { display: none; }
+  html.v2-scrolled .header-display-desktop .header-nav { padding: 0; border-top: 0; }
   .header-cta {
     display: inline-block;
     font-family: 'Roboto Mono', monospace;
@@ -651,7 +660,7 @@ pre code a {
                   >
                     
                       <div class="header-title-text">
-                        <a id="site-title" href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto+Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;text-transform:uppercase;">continuous</span></h4>
+                        <a id="site-title" href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto+Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;text-transform:uppercase;">continuous coaching</span></h4>
 
 
 
@@ -825,7 +834,7 @@ pre code a {
                   >
                     
                       <div class="header-title-text">
-                        <a href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;">continuous</span>
+                        <a href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;">continuous coaching</span>
                       </div>
                     
                     
@@ -4412,12 +4421,14 @@ pre code a {
 /* Sticky-header offset + scroll-spy: highlight the nav link for the section being read. */
 (function () {
   var header = document.getElementById('header');
-  function setOffset() {
-    if (header) document.documentElement.style.setProperty('--v2-header-h', header.offsetHeight + 'px');
+  var root = document.documentElement, scrolled = false;
+  function compact() {
+    var y = window.pageYOffset;
+    if (!scrolled && y > 60) { scrolled = true; root.classList.add('v2-scrolled'); }
+    else if (scrolled && y < 10) { scrolled = false; root.classList.remove('v2-scrolled'); }
   }
-  setOffset();
-  window.addEventListener('resize', setOffset);
-  window.addEventListener('load', setOffset);
+  window.addEventListener('scroll', compact, { passive: true });
+  compact();
 
   var links = Array.prototype.slice.call(document.querySelectorAll('.header-nav-list a[href^="#"]'));
   var pairs = links.map(function (a) { return { a: a, el: document.querySelector(a.getAttribute('href')) }; })
