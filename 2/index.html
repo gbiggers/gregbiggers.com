@@ -306,6 +306,11 @@ pre code a {
 .v2-label-pre { font-weight: 400; opacity: 0.85; }
 /* In the dark green hero list, CONTINUOUS matches the bold weight of the label; the lighter treatment is for the sections below. */
 .dark-bold .v2-label-pre { font-weight: 700; opacity: 1; }
+/* On the green sections, "CONTINUOUS |" and the heading words share one line; if the heading is too long,
+   only the heading wraps, staying to the right of the pipe. */
+.dark-bold .v2-label { flex-direction: row; align-items: flex-start; column-gap: 0.5em; }
+.dark-bold .v2-label-pre { white-space: nowrap; flex: none; }
+.dark-bold .v2-label-pre::after { content: " |"; }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
