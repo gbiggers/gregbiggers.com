@@ -291,8 +291,12 @@ pre code a {
   .v2-foot-lockup-phone { display: flex; align-items: center; font-size: min(5.2vw, 1.26rem); }
   .v2-foot-lockup-phone .v2-sub { display: flex; flex-direction: column; margin-left: 0.3em; font-family: 'Roboto Mono', monospace; font-weight: 300; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.15; }
   .v2-foot-lockup-phone .v2-sub i { font-style: normal; margin-right: 0.45em; }
-  .v2-footer-top { flex-wrap: wrap; }
-  .v2-footer-nav { flex-direction: column; gap: 0.4rem; }
+  .v2-footer-inner { display: flex; flex-direction: column; }
+  .v2-footer-top { display: contents; }
+  .v2-foot-lockup-phone { order: 1; }
+  .v2-footer-nav { order: 2; flex-direction: column; gap: 0.4rem; }
+  .v2-foot-cta { order: 3; align-self: flex-start; margin-top: 1.5rem; }
+  .v2-footer-bottom { order: 4; }
   .v2-footer-nav a { font-size: 1rem; }
   .v2-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
@@ -4258,7 +4262,7 @@ pre code a {
     </div>
     <nav class="v2-footer-nav" aria-label="Footer"><a href="#strategy">Strategy &amp; Execution</a><a href="#founders">Founder Success</a><a href="#leadership">Product Leadership</a><a href="#career">Product Career</a><a href="#incorruptible">Incorruptible</a></nav>
     <div class="v2-footer-bottom">
-      <p class="v2-footer-copy">&copy; 2026 Greg Biggers</p>
+      <p class="v2-footer-copy">&copy; <span id="v2-year">2026</span> Greg Biggers</p>
       <div class="v2-footer-contact">
         <a href="mailto:hello@gregbiggers.com">hello@gregbiggers.com</a>
         <a class="v2-footer-icon" href="https://twitter.com/bigs" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 64 64" aria-hidden="true"><use xlink:href="#twitter-unauth-icon"></use></svg></a>
@@ -4279,6 +4283,9 @@ pre code a {
 /* Sticky-header offset + scroll-spy: highlight the nav link for the section being read. */
 (function () {
   var header = document.getElementById('header');
+  var yr = document.getElementById('v2-year');
+  if (yr) yr.textContent = new Date().getFullYear();
+
   var root = document.documentElement, scrolled = false;
   function compact() {
     var y = window.pageYOffset;
