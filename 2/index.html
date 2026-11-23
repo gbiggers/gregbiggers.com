@@ -306,22 +306,34 @@ pre code a {
 .v2-label-pre { font-weight: 400; opacity: 0.85; }
 /* In the dark green hero list, CONTINUOUS matches the bold weight of the label; the lighter treatment is for the sections below. */
 .dark-bold .v2-label-pre { font-weight: 700; opacity: 1; }
-/* Hamburger menu: keep the header's palette (lime on dark green) instead of the default white overlay,
-   and show "Let's talk" as the same lime button used elsewhere. Type sizes are left as they were. */
+/* Hamburger menu: keep the header dark green but make the link list white with dark green links,
+   and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
-  --menuOverlayBackgroundColor: hsl(var(--darkAccent-hsl));
-  --menuOverlayNavigationLinkColor: hsl(var(--accent-hsl));
+  --menuOverlayBackgroundColor: #fff;
+  --menuOverlayNavigationLinkColor: hsl(var(--darkAccent-hsl));
 }
 /* Squarespace strips the header's dark theme while the menu is open, which turns the header strip white
    (and, on iPhone, tints the top of the screen white). Keep it dark green in every state. */
 .header, .header--menu-open .header { background-color: hsl(var(--darkAccent-hsl)); }
+/* The overlay covers the whole screen, so paint a dark green band behind the header and white below it.
+   --v2-hh is the header height, set from JS. Header text/burger stay lime while the menu is open. */
+.site-wrapper .header-menu .header-menu-bg {
+  background: linear-gradient(to bottom, hsl(var(--darkAccent-hsl)) var(--v2-hh, 4.5rem), #fff var(--v2-hh, 4.5rem));
+}
+.header--menu-open .header .header-title-text a,
+.header--menu-open .header .header-actions { color: hsl(var(--accent-hsl)); }
+.header--menu-open .header .header-burger .top-bun,
+.header--menu-open .header .header-burger .patty,
+.header--menu-open .header .header-burger .bottom-bun { background-color: hsl(var(--accent-hsl)); }
 .header-menu-nav-item a.v2-menu-cta {
-  margin-top: 2.5rem;
-  padding: 0.45em 1em;
-  border-radius: 8px;
-  background: hsl(var(--accent-hsl));
-  color: hsl(var(--black-hsl));
-  word-spacing: -0.3em;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0.6em 1.1em;
+  border-radius: 7px;
+  background: hsl(var(--darkAccent-hsl));
+  color: hsl(var(--accent-hsl));
+  word-spacing: 0;
 }
 </style>
 </head>
@@ -4307,6 +4319,9 @@ pre code a {
 /* Sticky-header offset + scroll-spy: highlight the nav link for the section being read. */
 (function () {
   var header = document.getElementById('header');
+  var hdr = document.querySelector('.header');
+  function setHH() { if (hdr) document.documentElement.style.setProperty('--v2-hh', hdr.getBoundingClientRect().height + 'px'); }
+  setHH(); window.addEventListener('resize', setHH); window.addEventListener('scroll', setHH, { passive: true });
   var yr = document.getElementById('v2-year');
   if (yr) yr.textContent = new Date().getFullYear();
 
