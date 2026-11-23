@@ -227,8 +227,17 @@ pre code a {
     word-spacing: -0.3em;
   }
 }
-/* Phone/small-tablet header: keep 'Greg Biggers | CONTINUOUS COACHING' on one line next to the menu button. */
-.header-display-mobile .header-title-text { white-space: nowrap; font-size: min(4vw, 1.26rem); }
+/* Phone/small-tablet header title: "Greg Biggers" | CONTINUOUS over COACHING, both lines sharing one bar. */
+.header-display-mobile .header-title-text { font-size: min(5.2vw, 1.26rem); display: flex; align-items: baseline; }
+.header-display-mobile .header-title-text a { white-space: nowrap; }
+.header-display-mobile .v2-sub {
+  display: flex; flex-direction: column;
+  margin-left: 0.45em; padding-left: 0.45em;
+  border-left: 1px solid hsl(var(--accent-hsl));
+  font-family: 'Roboto Mono', monospace; font-weight: 300; letter-spacing: 0.02em;
+  text-transform: uppercase; line-height: 1.15;
+  color: var(--navigationLinkColor);
+}
 </style>
 </head>
 
@@ -836,7 +845,7 @@ pre code a {
                   >
                     
                       <div class="header-title-text">
-                        <a href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;">continuous coaching</span>
+                        <a href="/" data-animation-role="header-element">Greg Biggers</a><span class="v2-sub"><span>continuous</span><span>coaching</span></span>
                       </div>
                     
                     
