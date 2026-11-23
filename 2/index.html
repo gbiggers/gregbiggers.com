@@ -192,7 +192,7 @@ pre code a {
     border-top: 1px solid rgba(255,255,255,0.25);
   }
   .header-display-desktop .header-nav-list { justify-content: space-between; display: flex; flex-wrap: nowrap; }
-  .header-display-desktop .header-nav-item:not(:first-child) { margin-left: 0; }
+  .header-display-desktop .header-nav-item:not(:first-child):not(.header-actions-action--cart) { margin-left: 0; }
   .header-display-desktop .header-nav-list { column-gap: 0.75rem; }
   .header-display-desktop .header-nav-item { font-size: clamp(0.66rem, 1.35vw, 1rem); letter-spacing: 0.01em; white-space: nowrap; }
   .header-display-desktop .header-nav-item a {
@@ -216,6 +216,29 @@ pre code a {
     pointer-events: auto;
     word-spacing: -0.3em;
   }
+}
+/* Wide desktop: one header row. Title | section links in two rows (3 + 2) | button. */
+@media only screen and (min-width: 1280px) {
+  .header-display-desktop {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "title nav cta";
+    column-gap: 2.5rem;
+    row-gap: 0;
+  }
+  .header-display-desktop .header-nav {
+    justify-self: end;
+    padding: 0;
+    border-top: 0;
+  }
+  .header-display-desktop .header-nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 2rem;
+    row-gap: 0.15rem;
+    justify-content: end;
+  }
+  .header-display-desktop .header-nav-item { font-size: 0.85rem; justify-self: start; }
+  .header-display-desktop .header-title { white-space: nowrap; }
 }
 </style>
 </head>
