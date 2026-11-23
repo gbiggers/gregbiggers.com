@@ -250,6 +250,14 @@ pre code a {
   .header .header-announcement-bar-wrapper { transition: padding 150ms ease-in-out; }
   html.v2-scrolled .header .header-announcement-bar-wrapper { padding-top: 3vw; padding-bottom: 3vw; }
 }
+/* Traditional "&" for headings. Inknut Antiqua's default ampersand is a looped "Et" form that reads like "ex";
+   the font also contains a conventional one (glyph ampersand.case) that it only uses for Devanagari text.
+   These two tiny subset fonts hold just that glyph, mapped to U+0026, so only "&" falls through to them. */
+@font-face { font-family: "Inknut Antiqua Amp"; font-weight: 600; font-display: swap;
+  src: url(/fonts/inknut-amp-600.woff2) format("woff2"); unicode-range: U+0026; }
+@font-face { font-family: "Inknut Antiqua Amp"; font-weight: 700; font-display: swap;
+  src: url(/fonts/inknut-amp-700.woff2) format("woff2"); unicode-range: U+0026; }
+:root { --heading-font-font-family: "Inknut Antiqua Amp", "Inknut Antiqua"; }
 </style>
 </head>
 
