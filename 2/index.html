@@ -263,17 +263,16 @@ pre code a {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem;
   margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.25);
 }
-.v2-footer-nav a, .v2-footer-contact a:not(.v2-footer-icon), .v2-footer-copy {
+.v2-footer-nav a, .v2-footer-copy {
   font-family: 'Roboto Mono', monospace; font-weight: 700; letter-spacing: 0.01em; text-transform: uppercase;
   word-spacing: -0.3em; font-size: 1rem; line-height: 1.4;
 }
 .v2-footer-nav a { padding: 0.2rem 0; border-bottom: 2px solid transparent; transition: border-color 150ms ease-in-out; font-size: clamp(0.66rem, 1.35vw, 1rem); letter-spacing: 0.01em; white-space: nowrap; }
-.v2-footer-nav a:hover, .v2-footer-contact a:hover { border-bottom-color: hsl(var(--accent-hsl)); }
+.v2-footer-nav a:hover { border-bottom-color: hsl(var(--accent-hsl)); }
 .v2-footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; margin-top: 2rem; }
 .v2-footer-copy { margin: 0; font-size: 0.85rem; font-weight: 400; opacity: 0.8; }
-.v2-footer-contact { display: flex; align-items: center; gap: 1.25rem; }
-.v2-footer-contact .v2-footer-icon + .v2-footer-icon { margin-left: 0; }
-.v2-footer-contact a:not(.v2-footer-icon) { font-size: 0.85rem; border-bottom: 2px solid transparent; }
+.v2-footer-actions { display: flex; align-items: center; gap: 1.25rem; }
+.v2-footer-contact { display: flex; align-items: center; gap: 1rem; }
 .v2-footer-icon { display: inline-flex; width: 44px; height: 44px; margin: -8px; }
 .v2-footer-icon svg { width: 100%; height: 100%; fill: currentColor; }
 .v2-footer-icon:hover { opacity: 0.75; }
@@ -283,7 +282,7 @@ pre code a {
   .v2-footer { padding: 1.75rem 6vw; }
   .v2-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
   .v2-footer-top, .v2-footer-bottom { display: contents; }
-  .v2-foot-cta, .v2-footer-nav, .v2-footer-copy, .v2-footer-contact a:not(.v2-footer-icon) { display: none; }
+  .v2-foot-cta, .v2-footer-nav, .v2-footer-copy { display: none; }
 }
 @media only screen and (pointer: coarse) and (max-width: 1024px), screen and (max-width: 799px) {
   .v2-footer { padding: 2rem 6vw 1.75rem; }
@@ -295,7 +294,7 @@ pre code a {
   .v2-footer-top { display: contents; }
   .v2-foot-lockup-phone { order: 1; }
   .v2-footer-nav { order: 2; flex-direction: column; gap: 0.4rem; }
-  .v2-foot-cta { order: 3; align-self: flex-start; margin-top: 1.5rem; }
+  .v2-footer-actions { order: 3; margin-top: 1.5rem; }
   .v2-footer-bottom { order: 4; }
   .v2-footer-nav a { font-size: 1rem; }
   .v2-footer-bottom { flex-direction: column; align-items: flex-start; }
@@ -4258,16 +4257,17 @@ pre code a {
       <div class="header-title-text v2-foot-lockup-phone">
         <a href="/">Greg Biggers</a><span class="v2-sub"><span><i aria-hidden="true">|</i>continuous</span><span><i aria-hidden="true">|</i>coaching</span></span>
       </div>
-      <a class="v2-foot-cta" href="https://calendar.app.google/NNuYgKcXm4qLWgr1A">Let's talk</a>
+      <div class="v2-footer-actions">
+        <a class="v2-foot-cta" href="https://calendar.app.google/NNuYgKcXm4qLWgr1A">Let's talk</a>
+        <div class="v2-footer-contact">
+          <a class="v2-footer-icon" href="https://twitter.com/bigs" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 64 64" aria-hidden="true"><use xlink:href="#twitter-unauth-icon"></use></svg></a>
+          <a class="v2-footer-icon" href="https://www.linkedin.com/in/gregbiggers/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 64 64" aria-hidden="true"><use xlink:href="#linkedin-unauth-icon"></use></svg></a>
+        </div>
+      </div>
     </div>
     <nav class="v2-footer-nav" aria-label="Footer"><a href="#strategy">Strategy &amp; Execution</a><a href="#founders">Founder Success</a><a href="#leadership">Product Leadership</a><a href="#career">Product Career</a><a href="#incorruptible">Incorruptible</a></nav>
     <div class="v2-footer-bottom">
       <p class="v2-footer-copy">&copy; <span id="v2-year">2026</span> Greg Biggers</p>
-      <div class="v2-footer-contact">
-        <a href="mailto:hello@gregbiggers.com">hello@gregbiggers.com</a>
-        <a class="v2-footer-icon" href="https://twitter.com/bigs" target="_blank" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 64 64" aria-hidden="true"><use xlink:href="#twitter-unauth-icon"></use></svg></a>
-        <a class="v2-footer-icon" href="https://www.linkedin.com/in/gregbiggers/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 64 64" aria-hidden="true"><use xlink:href="#linkedin-unauth-icon"></use></svg></a>
-      </div>
     </div>
   </div>
 </section>
