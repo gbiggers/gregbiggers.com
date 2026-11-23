@@ -17,6 +17,7 @@
     <!-- This is Squarespace. --><!-- oval-koala-kht4 -->
 <base href="">
 <meta charset="utf-8" />
+<meta name="theme-color" content="#014c40" />
 <meta name="robots" content="noindex" />
 <title>Greg Biggers (V2) · Product Success Coach and Executive</title>
 <link rel="canonical" href="https://gregbiggers.com/2/"/>
@@ -226,7 +227,7 @@ pre code a {
   margin-left: 0.3em;
   font-family: 'Roboto Mono', monospace; font-weight: 300; letter-spacing: 0.02em;
   text-transform: uppercase; line-height: 1.15;
-  color: var(--navigationLinkColor);
+  color: hsl(var(--accent-hsl)); /* stays lime when the menu is open (navigationLinkColor flips with the overlay theme) */
 }
 /* Divider is a separate '|' character on each line; "Greg Biggers" is vertically centered between the lines. */
 .header-display-mobile .v2-sub i { font-style: normal; font-weight: 300; margin-right: 0.45em; color: inherit; }
@@ -305,6 +306,23 @@ pre code a {
 .v2-label-pre { font-weight: 400; opacity: 0.85; }
 /* In the dark green hero list, CONTINUOUS matches the bold weight of the label; the lighter treatment is for the sections below. */
 .dark-bold .v2-label-pre { font-weight: 700; opacity: 1; }
+/* Hamburger menu: keep the header's palette (lime on dark green) instead of the default white overlay,
+   and show "Let's talk" as the same lime button used elsewhere. Type sizes are left as they were. */
+:root, .header, .header-menu {
+  --menuOverlayBackgroundColor: hsl(var(--darkAccent-hsl));
+  --menuOverlayNavigationLinkColor: hsl(var(--accent-hsl));
+}
+/* Squarespace strips the header's dark theme while the menu is open, which turns the header strip white
+   (and, on iPhone, tints the top of the screen white). Keep it dark green in every state. */
+.header, .header--menu-open .header { background-color: hsl(var(--darkAccent-hsl)); }
+.header-menu-nav-item a.v2-menu-cta {
+  margin-top: 2.5rem;
+  padding: 0.45em 1em;
+  border-radius: 8px;
+  background: hsl(var(--accent-hsl));
+  color: hsl(var(--black-hsl));
+  word-spacing: -0.3em;
+}
 </style>
 </head>
 
@@ -1293,8 +1311,8 @@ pre code a {
           
             <div class="container header-menu-nav-item header-menu-nav-item--collection">
               <a
+                class="btn v2-menu-cta"
                 href="https://calendar.app.google/NNuYgKcXm4qLWgr1A"
-                
               >
                 <div class="header-menu-nav-item-content">
                   Let's talk
