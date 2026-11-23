@@ -167,12 +167,12 @@ pre code a {
 </style>
 
   <style>
-/* V2 desktop header: sticky, two rows.
+/* V2 desktop header: sticky, two rows (roomy at the top of the page, slim single row once scrolled).
    Row 1: site title (left) + "Let's talk" button (right). Row 2: section links.
    Only applies when Squarespace shows the desktop header (not phones / small tablets). */
 .header-cta { display: none; }
 @media only screen and (min-width: 800px) and (pointer: fine), only screen and (min-width: 1025px) {
-  html { scroll-padding-top: var(--v2-header-h, 8rem); scroll-behavior: smooth; }
+  html { scroll-padding-top: 4.5rem; scroll-behavior: smooth; }
   .header { position: fixed; }
   .header-display-desktop {
     display: grid;
@@ -181,6 +181,7 @@ pre code a {
     align-items: center;
     row-gap: 0.9rem;
   }
+  .header .header-announcement-bar-wrapper { padding-top: 1.25rem; padding-bottom: 1.25rem; }
   .header-display-desktop .header-title-nav-wrapper { display: contents; }
   .header-display-desktop .header-title { grid-area: title; }
   .header-display-desktop .header-actions { grid-area: cta; }
@@ -204,6 +205,19 @@ pre code a {
   .header-display-desktop .header-nav-item a[aria-current="true"] {
     border-bottom-color: hsl(var(--accent-hsl));
   }
+  /* Scrolled: drop the title row; labels + button share one slim row. */
+  html.v2-scrolled .header-display-desktop {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "nav cta";
+    column-gap: 2.5rem;
+    row-gap: 0;
+  }
+  html.v2-scrolled .header-display-desktop .header-title { display: none; }
+  html.v2-scrolled .header-display-desktop .header-nav { padding: 0; border-top: 0; }
+  /* ...and tighten everything in the scrolled state. */
+  html.v2-scrolled .header .header-announcement-bar-wrapper { padding-top: 0.85rem; padding-bottom: 0.85rem; }
+  html.v2-scrolled .header-display-desktop .header-nav-item a { padding: 0.2rem 0; }
+  html.v2-scrolled .header-cta { padding: 0.4rem 1.1rem; border-radius: 6px; }
   .header-cta {
     display: inline-block;
     font-family: 'Roboto Mono', monospace;
@@ -217,28 +231,24 @@ pre code a {
     word-spacing: -0.3em;
   }
 }
-/* Wide desktop: one header row. Title | section links in two rows (3 + 2) | button. */
-@media only screen and (min-width: 1280px) {
-  .header-display-desktop {
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas: "title nav cta";
-    column-gap: 2.5rem;
-    row-gap: 0;
-  }
-  .header-display-desktop .header-nav {
-    justify-self: end;
-    padding: 0;
-    border-top: 0;
-  }
-  .header-display-desktop .header-nav-list {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 2rem;
-    row-gap: 0.15rem;
-    justify-content: end;
-  }
-  .header-display-desktop .header-nav-item { font-size: 0.85rem; justify-self: start; }
-  .header-display-desktop .header-title { white-space: nowrap; }
+/* Phone/small-tablet header title: "Greg Biggers" centered against two lines, each with its own "|" divider. */
+.header-display-mobile .header-title-text { font-size: min(5.2vw, 1.26rem); display: flex; align-items: center; }
+.header-display-mobile .header-title-text a { white-space: nowrap; }
+.header-display-mobile .v2-sub {
+  display: flex; flex-direction: column;
+  margin-left: 0.3em;
+  font-family: 'Roboto Mono', monospace; font-weight: 300; letter-spacing: 0.02em;
+  text-transform: uppercase; line-height: 1.15;
+  color: var(--navigationLinkColor);
+}
+/* Divider is a separate '|' character on each line; "Greg Biggers" is vertically centered between the lines. */
+.header-display-mobile .v2-sub i { font-style: normal; font-weight: 300; margin-right: 0.45em; color: inherit; }
+/* Phone/small-tablet header: fixed (non-scrolling), a little slimmer once the page has scrolled. */
+@media only screen and (pointer: coarse) and (max-width: 1024px), screen and (max-width: 799px) {
+  .header { position: fixed; }
+  html { scroll-padding-top: 5rem; }
+  .header .header-announcement-bar-wrapper { transition: padding 150ms ease-in-out; }
+  html.v2-scrolled .header .header-announcement-bar-wrapper { padding-top: 3vw; padding-bottom: 3vw; }
 }
 </style>
 </head>
@@ -673,7 +683,7 @@ pre code a {
                   >
                     
                       <div class="header-title-text">
-                        <a id="site-title" href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto+Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;text-transform:uppercase;">continuous</span></h4>
+                        <a id="site-title" href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto+Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;text-transform:uppercase;">continuous coaching</span></h4>
 
 
 
@@ -847,7 +857,7 @@ pre code a {
                   >
                     
                       <div class="header-title-text">
-                        <a href="/" data-animation-role="header-element">Greg Biggers | </a> <span style="color: var(--navigationLinkColor);font-family: 'Roboto Mono', monospace;text-transform:uppercase;font-weight:300;letter-spacing:0.02em;">continuous</span>
+                        <a href="/" data-animation-role="header-element">Greg Biggers</a><span class="v2-sub"><span><i aria-hidden="true">|</i>continuous</span><span><i aria-hidden="true">|</i>coaching</span></span>
                       </div>
                     
                     
@@ -4434,12 +4444,14 @@ pre code a {
 /* Sticky-header offset + scroll-spy: highlight the nav link for the section being read. */
 (function () {
   var header = document.getElementById('header');
-  function setOffset() {
-    if (header) document.documentElement.style.setProperty('--v2-header-h', header.offsetHeight + 'px');
+  var root = document.documentElement, scrolled = false;
+  function compact() {
+    var y = window.pageYOffset;
+    if (!scrolled && y > 60) { scrolled = true; root.classList.add('v2-scrolled'); }
+    else if (scrolled && y < 10) { scrolled = false; root.classList.remove('v2-scrolled'); }
   }
-  setOffset();
-  window.addEventListener('resize', setOffset);
-  window.addEventListener('load', setOffset);
+  window.addEventListener('scroll', compact, { passive: true });
+  compact();
 
   var links = Array.prototype.slice.call(document.querySelectorAll('.header-nav-list a[href^="#"]'));
   var pairs = links.map(function (a) { return { a: a, el: document.querySelector(a.getAttribute('href')) }; })
