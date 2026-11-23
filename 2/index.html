@@ -231,16 +231,24 @@ pre code a {
     word-spacing: -0.3em;
   }
 }
-/* Phone/small-tablet header title: "Greg Biggers" | CONTINUOUS over COACHING, both lines sharing one bar. */
-.header-display-mobile .header-title-text { font-size: min(5.2vw, 1.26rem); display: flex; align-items: baseline; }
+/* Phone/small-tablet header title: "Greg Biggers" centered against two lines, each with its own "|" divider. */
+.header-display-mobile .header-title-text { font-size: min(5.2vw, 1.26rem); display: flex; align-items: center; }
 .header-display-mobile .header-title-text a { white-space: nowrap; }
 .header-display-mobile .v2-sub {
   display: flex; flex-direction: column;
-  margin-left: 0.45em; padding-left: 0.45em;
-  border-left: 1px solid hsl(var(--accent-hsl));
+  margin-left: 0.3em;
   font-family: 'Roboto Mono', monospace; font-weight: 300; letter-spacing: 0.02em;
   text-transform: uppercase; line-height: 1.15;
   color: var(--navigationLinkColor);
+}
+/* Divider is a separate '|' character on each line; "Greg Biggers" is vertically centered between the lines. */
+.header-display-mobile .v2-sub i { font-style: normal; font-weight: 300; margin-right: 0.45em; color: inherit; }
+/* Phone/small-tablet header: fixed (non-scrolling), a little slimmer once the page has scrolled. */
+@media only screen and (pointer: coarse) and (max-width: 1024px), screen and (max-width: 799px) {
+  .header { position: fixed; }
+  html { scroll-padding-top: 5rem; }
+  .header .header-announcement-bar-wrapper { transition: padding 150ms ease-in-out; }
+  html.v2-scrolled .header .header-announcement-bar-wrapper { padding-top: 3vw; padding-bottom: 3vw; }
 }
 </style>
 </head>
@@ -849,7 +857,7 @@ pre code a {
                   >
                     
                       <div class="header-title-text">
-                        <a href="/" data-animation-role="header-element">Greg Biggers</a><span class="v2-sub"><span>continuous</span><span>coaching</span></span>
+                        <a href="/" data-animation-role="header-element">Greg Biggers</a><span class="v2-sub"><span><i aria-hidden="true">|</i>continuous</span><span><i aria-hidden="true">|</i>coaching</span></span>
                       </div>
                     
                     
