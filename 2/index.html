@@ -299,6 +299,12 @@ pre code a {
   .v2-footer-nav a { font-size: 1rem; }
   .v2-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
+/* Stacked section label: CONTINUOUS on its own line above the label, with a bar down the left
+   (echoes the header lockup). Never wraps mid-label and never needs to shrink. */
+.v2-label { display: flex; flex-direction: column; border-left: 1px solid currentColor; padding-left: 0.6em; line-height: 1.25; }
+.v2-label-pre { font-weight: 400; opacity: 0.85; }
+/* In the dark green hero list, CONTINUOUS matches the bold weight of the label; the lighter treatment is for the sections below. */
+.dark-bold .v2-label-pre { font-weight: 700; opacity: 1; }
 </style>
 </head>
 
@@ -1548,19 +1554,19 @@ pre code a {
 
 <div class="sqs-html-content">
   <hr />
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;">Strategy &amp; Execution</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Strategy &amp; Execution</span></h4>
   <h1 style="text-align:center;white-space:pre-wrap;">[Headline TBD]</h1>
   <hr />
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;">Founder Success</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Founder Success</span></h4>
   <h1 style="text-align:center;white-space:pre-wrap;">[Headline TBD]</h1>
   <hr />
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;">Product Leadership</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Product Leadership</span></h4>
   <h1 style="text-align:center;white-space:pre-wrap;">[Headline TBD]</h1>
   <hr />
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;">Product Career</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Product Career</span></h4>
   <h1 style="text-align:center;white-space:pre-wrap;">[Headline TBD]</h1>
   <hr />
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;">Incorruptible</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Incorruptible</span></h4>
   <h1 style="text-align:center;white-space:pre-wrap;">[Headline TBD]</h1>
 <section>
   <hr />
@@ -2302,7 +2308,7 @@ pre code a {
   }
 
 </style><div class="fluid-engine fe-67ee7183394e07153b84874f"><div class="fe-block fe-block-67ee7183c4fe6ff84abefba0"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-67ee7183c4fe6ff84abefba0"><div class="sqs-block-content"><hr /></div></div></div><div class="fe-block fe-block-67ee7183fce371d01d81e4c1"><div class="sqs-block html-block sqs-block-html" data-blend-mode="NORMAL" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-67ee7183fce371d01d81e4c1"><div class="sqs-block-content">
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;">Strategy &amp; Execution</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;"><span class="v2-label-pre">Continuous</span><span>Strategy &amp; Execution</span></h4>
 <div class="sqs-html-content">
   <h2 style="white-space:pre-wrap;">Product Strategy &amp; Execution Intensive</h2>
 </div>
@@ -2617,7 +2623,7 @@ pre code a {
   }
 
 </style><div class="fluid-engine fe-67ee7183394e07153b84874f"><div class="fe-block fe-block-67ee7183c4fe6ff84abefba0"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-67ee7183c4fe6ff84abefba0"><div class="sqs-block-content"><hr /></div></div></div><div class="fe-block fe-block-67ee7183fce371d01d81e4c1"><div class="sqs-block html-block sqs-block-html" data-blend-mode="NORMAL" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-67ee7183fce371d01d81e4c1"><div class="sqs-block-content">
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;">Founder Success</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;"><span class="v2-label-pre">Continuous</span><span>Founder Success</span></h4>
 <div class="sqs-html-content">
   <h2 style="white-space:pre-wrap;">Founder Success Coaching</h2>
 </div>
@@ -2932,7 +2938,7 @@ pre code a {
   }
 
 </style><div class="fluid-engine fe-67ee7183394e07153b84874f"><div class="fe-block fe-block-67ee7183c4fe6ff84abefba0"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-67ee7183c4fe6ff84abefba0"><div class="sqs-block-content"><hr /></div></div></div><div class="fe-block fe-block-67ee7183fce371d01d81e4c1"><div class="sqs-block html-block sqs-block-html" data-blend-mode="NORMAL" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-67ee7183fce371d01d81e4c1"><div class="sqs-block-content">
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;">Product Leadership</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;"><span class="v2-label-pre">Continuous</span><span>Product Leadership</span></h4>
 <div class="sqs-html-content">
   <h2 style="white-space:pre-wrap;">Product Leadership Coaching</h2>
 </div>
@@ -3247,7 +3253,7 @@ pre code a {
   }
 
 </style><div class="fluid-engine fe-67ee7183394e07153b84874f"><div class="fe-block fe-block-67ee7183c4fe6ff84abefba0"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-67ee7183c4fe6ff84abefba0"><div class="sqs-block-content"><hr /></div></div></div><div class="fe-block fe-block-67ee7183fce371d01d81e4c1"><div class="sqs-block html-block sqs-block-html" data-blend-mode="NORMAL" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-67ee7183fce371d01d81e4c1"><div class="sqs-block-content">
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;">Product Career</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;"><span class="v2-label-pre">Continuous</span><span>Product Career</span></h4>
 <div class="sqs-html-content">
   <h2 style="white-space:pre-wrap;">Product Career Jumpstart</h2>
 </div>
@@ -3562,7 +3568,7 @@ pre code a {
   }
 
 </style><div class="fluid-engine fe-67ee7183394e07153b84874f"><div class="fe-block fe-block-67ee7183c4fe6ff84abefba0"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-67ee7183c4fe6ff84abefba0"><div class="sqs-block-content"><hr /></div></div></div><div class="fe-block fe-block-67ee7183fce371d01d81e4c1"><div class="sqs-block html-block sqs-block-html" data-blend-mode="NORMAL" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-67ee7183fce371d01d81e4c1"><div class="sqs-block-content">
-  <h4 style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;">Incorruptible</h4>
+  <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;"><span class="v2-label-pre">Continuous</span><span>Incorruptible</span></h4>
 <div class="sqs-html-content">
   <h2 style="white-space:pre-wrap;">Incorruptible Integrity</h2>
 </div>
