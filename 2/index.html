@@ -17,6 +17,7 @@
     <!-- This is Squarespace. --><!-- oval-koala-kht4 -->
 <base href="">
 <meta charset="utf-8" />
+<meta name="theme-color" content="#014c40" />
 <meta name="robots" content="noindex" />
 <title>Greg Biggers (V2) · Product Success Coach and Executive</title>
 <link rel="canonical" href="https://gregbiggers.com/2/"/>
@@ -311,6 +312,9 @@ pre code a {
   --menuOverlayBackgroundColor: hsl(var(--darkAccent-hsl));
   --menuOverlayNavigationLinkColor: hsl(var(--accent-hsl));
 }
+/* Squarespace strips the header's dark theme while the menu is open, which turns the header strip white
+   (and, on iPhone, tints the top of the screen white). Keep it dark green in every state. */
+.header, .header--menu-open .header { background-color: hsl(var(--darkAccent-hsl)); }
 .header-menu-nav-item a.v2-menu-cta {
   margin-top: 2.5rem;
   padding: 0.45em 1em;
