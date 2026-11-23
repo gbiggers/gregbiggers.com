@@ -167,12 +167,12 @@ pre code a {
 </style>
 
   <style>
-/* V2 desktop header: sticky, two rows (roomy at the top of the page, slim single row once scrolled).
+/* V2 desktop header: sticky, two rows (always shown in full).
    Row 1: site title (left) + "Let's talk" button (right). Row 2: section links.
    Only applies when Squarespace shows the desktop header (not phones / small tablets). */
 .header-cta { display: none; }
 @media only screen and (min-width: 800px) and (pointer: fine), only screen and (min-width: 1025px) {
-  html { scroll-padding-top: 4.5rem; scroll-behavior: smooth; }
+  html { scroll-padding-top: 8rem; scroll-behavior: smooth; }
   .header { position: fixed; }
   .header-display-desktop {
     display: grid;
@@ -181,7 +181,7 @@ pre code a {
     align-items: center;
     row-gap: 0.9rem;
   }
-  .header .header-announcement-bar-wrapper { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+  .header .header-announcement-bar-wrapper { padding-top: 1rem; padding-bottom: 1rem; }
   .header-display-desktop .header-title-nav-wrapper { display: contents; }
   .header-display-desktop .header-title { grid-area: title; }
   .header-display-desktop .header-actions { grid-area: cta; }
@@ -205,19 +205,6 @@ pre code a {
   .header-display-desktop .header-nav-item a[aria-current="true"] {
     border-bottom-color: hsl(var(--accent-hsl));
   }
-  /* Scrolled: drop the title row; labels + button share one slim row. */
-  html.v2-scrolled .header-display-desktop {
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "nav cta";
-    column-gap: 2.5rem;
-    row-gap: 0;
-  }
-  html.v2-scrolled .header-display-desktop .header-title { display: none; }
-  html.v2-scrolled .header-display-desktop .header-nav { padding: 0; border-top: 0; }
-  /* ...and tighten everything in the scrolled state. */
-  html.v2-scrolled .header .header-announcement-bar-wrapper { padding-top: 0.85rem; padding-bottom: 0.85rem; }
-  html.v2-scrolled .header-display-desktop .header-nav-item a { padding: 0.2rem 0; }
-  html.v2-scrolled .header-cta { padding: 0.4rem 1.1rem; border-radius: 6px; }
   .header-cta {
     display: inline-block;
     font-family: 'Roboto Mono', monospace;
@@ -225,8 +212,8 @@ pre code a {
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 0.7rem 1.4rem;
-    border-radius: 8px;
+    padding: 0.55rem 1.2rem;
+    border-radius: 7px;
     pointer-events: auto;
     word-spacing: -0.3em;
   }
