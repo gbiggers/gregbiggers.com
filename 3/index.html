@@ -308,9 +308,10 @@ pre code a {
 .dark-bold .v2-label-pre { font-weight: 700; opacity: 1; }
 /* On the green sections, "CONTINUOUS |" and the heading words share one line; if the heading is too long,
    only the heading wraps, staying to the right of the pipe. */
-.dark-bold .v2-label { flex-direction: row; align-items: flex-start; column-gap: 0.5em; border-left: 0; padding-left: 0; }
-.dark-bold .v2-label-pre { white-space: nowrap; flex: none; }
-.dark-bold .v2-label-pre::after { content: " |"; }
+.dark-bold .v2-label { flex-direction: row; align-items: stretch; border-left: 0; padding-left: 0; }
+/* The divider is a rule, not a "|" character, so it spans both lines when the heading wraps. */
+.dark-bold .v2-label-pre { white-space: nowrap; flex: none; padding-right: 0.6em; border-right: 2px solid currentColor; }
+.dark-bold .v2-label-pre + span { padding-left: 0.6em; }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
