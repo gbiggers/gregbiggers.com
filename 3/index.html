@@ -46,9 +46,9 @@
 <script>document.documentElement.classList.add('wf-loading')</script>
 <style>@keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; }
   /* pull-quotes */
-  .sqs-html-content p.v2-quote { font-family: 'Inknut Antiqua', serif; font-size: 1.3rem; line-height: 1.5; color: hsl(var(--darkAccent-hsl)); text-align: left; text-indent: -0.45em; margin: 2.25rem 0 0.6rem; }
-  .sqs-html-content p.v2-quote + p { margin-top: 0; }
-  .sqs-html-content p.v2-quote:first-child { margin-top: 0; }
+  .sqs-html-content p.v2-quote { font-family: 'Inknut Antiqua', serif; font-size: 1.3rem; line-height: 1.5; color: hsl(var(--darkAccent-hsl)); text-align: left; margin: 0 0 0 clamp(0.75rem, 6vw, 3.5rem) !important; padding: 0.15rem 0 0.6rem 1.4rem; border-left: 6px solid hsl(var(--accent-hsl)); text-indent: -0.45em; }
+  .sqs-html-content p.v2-quote + p { margin: 0 0 1.75em clamp(0.75rem, 6vw, 3.5rem) !important; padding: 0 0 0.15rem 1.4rem; border-left: 6px solid hsl(var(--accent-hsl)); }
+  .sqs-html-content p.v2-quote:first-child { margin-top: 0 !important; }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:ital,wght@0,600;0,700&family=Roboto+Mono:ital,wght@0,700;1,700"><script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
