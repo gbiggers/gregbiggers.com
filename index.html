@@ -331,7 +331,7 @@ pre code a {
 .dark-bold h1 a:hover, .dark-bold h1 a:focus-visible { background-size: 100% 2px; }
 /* Hero labels link too: the <a> carries the label's row layout (name | section), inherits the white, underlines on hover/focus. */
 .dark-bold .v2-label > a { display: flex; flex-direction: row; align-items: stretch; color: inherit; text-decoration: none; }
-.dark-bold .v2-label > a:hover span, .dark-bold .v2-label > a:focus-visible span { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+.dark-bold .v2-label > a:hover span:not(.v2-label-pre), .dark-bold .v2-label > a:focus-visible span:not(.v2-label-pre) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
 /* Hero list: tighter top spacing on larger screens (the header is fixed, so some clearance stays). */
 @media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(24px, calc(6.6vmax - 45px)) !important; } }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
