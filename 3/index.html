@@ -86,11 +86,10 @@
 
   /* hero list sized to the viewport height so all five rows fit above the fold (desktop/tablet) */
   @media (min-width: 768px) {
-    .page-section.dark-bold h1 { font-size: clamp(1.5rem, 5.6vh, 3.4rem) !important; margin-top: clamp(0.3rem, 1.2vh, 2rem) !important; margin-bottom: clamp(0.4rem, 2vh, 2rem) !important; }
-    .page-section.dark-bold h4.v2-label { font-size: clamp(0.7rem, 1.9vh, 1.5rem) !important; margin-top: clamp(0.5rem, 1.8vh, 2rem) !important; margin-bottom: 0 !important; }
+    .page-section.dark-bold h1 { font-size: clamp(1.4rem, calc((100vh - var(--v2-hh, 8rem)) * 0.072), 3.4rem) !important; margin-top: clamp(0.25rem, calc((100vh - var(--v2-hh, 8rem)) * 0.012), 2rem) !important; margin-bottom: clamp(0.35rem, calc((100vh - var(--v2-hh, 8rem)) * 0.019), 2rem) !important; }
+    .page-section.dark-bold h4.v2-label { font-size: clamp(0.7rem, calc((100vh - var(--v2-hh, 8rem)) * 0.021), 1.5rem) !important; margin-top: clamp(0.4rem, calc((100vh - var(--v2-hh, 8rem)) * 0.015), 2rem) !important; margin-bottom: 0 !important; }
     .page-section.dark-bold h1 a { padding-bottom: 0.2em; }
     .page-section.dark-bold .sqs-html-content hr { margin-top: clamp(0.25rem, 1vh, 1.25rem); margin-bottom: 0; }
-    .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(12px, 2.4vh) !important; }
   }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -372,7 +371,7 @@ pre code a {
 .dark-bold .v2-label > a { display: flex; flex-direction: row; align-items: stretch; color: inherit; text-decoration: none; }
 .dark-bold .v2-label > a:hover span:not(.v2-label-pre), .dark-bold .v2-label > a:focus-visible span:not(.v2-label-pre) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
 /* Hero list: tighter top spacing on larger screens (the header is fixed, so some clearance stays). */
-@media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(24px, calc(6.6vmax - 45px)) !important; } }
+@media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(6px, min(calc(6.6vmax - 45px), 2.4vh)) !important; } }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
