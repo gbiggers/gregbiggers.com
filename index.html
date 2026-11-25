@@ -73,6 +73,8 @@
 
   /* warm neutrals everywhere: 'white' becomes a warm cream, 'black' body text becomes deep forest */
   :root:root { --white-hsl: 48, 30%, 97%; --black-hsl: 160, 40%, 16%; }
+  /* the first sub-heading in a pane body shouldn't add top space, so every pane's body starts at the same height */
+  .sqs-html-content > h4:first-child:not(.v2-label) { margin-top: 0 !important; }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:ital,wght@0,600;0,700&family=Roboto+Mono:ital,wght@0,700;1,700"><script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
@@ -351,7 +353,7 @@ pre code a {
 .dark-bold h1 a:hover, .dark-bold h1 a:focus-visible { background-size: 100% 2px; }
 /* Hero labels link too: the <a> carries the label's row layout (name | section), inherits the white, underlines on hover/focus. */
 .dark-bold .v2-label > a { display: flex; flex-direction: row; align-items: stretch; color: inherit; text-decoration: none; }
-.dark-bold .v2-label > a:hover span, .dark-bold .v2-label > a:focus-visible span { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+.dark-bold .v2-label > a:hover span:not(.v2-label-pre), .dark-bold .v2-label > a:focus-visible span:not(.v2-label-pre) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
 /* Hero list: tighter top spacing on larger screens (the header is fixed, so some clearance stays). */
 @media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(24px, calc(6.6vmax - 45px)) !important; } }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
