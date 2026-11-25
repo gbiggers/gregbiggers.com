@@ -311,6 +311,12 @@ pre code a {
 /* The divider is a rule, not a "|" character, so it spans both lines when the heading wraps. */
 .dark-bold .v2-label-pre { white-space: nowrap; flex: none; padding-right: 0.6em; border-right: 2px solid currentColor; }
 .dark-bold .v2-label-pre + span { padding-left: 0.6em; }
+/* Hero list: rules run the full content width; the serif headlines are a little smaller (size 4 -> 3.4 on the site's heading scale). */
+.dark-bold h1 { --heading-1-size-value: 3.4; }
+/* Hero rules: one solid 2px line in the accent lime at half strength, instead of the browser's default double stroke. */
+.dark-bold .sqs-html-content hr { border: 0; background-color: hsla(var(--accent-hsl), 0.5); }
+/* Hero list: tighter top spacing on larger screens (the header is fixed, so some clearance stays). */
+@media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(24px, calc(6.6vmax - 45px)) !important; } }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
@@ -1574,7 +1580,7 @@ pre code a {
   >
     <div
       class="content"
-       style="width: 63%;" 
+       style="width: 100%;" 
     >
       
       
@@ -1588,27 +1594,26 @@ pre code a {
       <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-67ee5a37a696465965e7effd"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-c522a388e616a4bb95b2"><div class="sqs-block-content">
 
 <div class="sqs-html-content">
-  <hr />
   <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Strategy &amp; Execution</span></h4>
-  <h1 style="text-align:center;white-space:pre-wrap;">Winning Strategy, Operationalized</h1>
+  <h1 style="text-align:left;white-space:pre-wrap;">Winning Strategy, Operationalized</h1>
   <hr />
   <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Founder Success</span></h4>
-  <h1 style="text-align:center;white-space:pre-wrap;">A Cool Approach to the Hot Seat</h1>
+  <h1 style="text-align:left;white-space:pre-wrap;">A Cool Approach to the Hot Seat</h1>
   <hr />
   <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Product Leadership</span></h4>
-  <h1 style="text-align:center;white-space:pre-wrap;">Taste Is Not Enough</h1>
+  <h1 style="text-align:left;white-space:pre-wrap;">Taste Is Not Enough</h1>
   <hr />
   <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Product Career</span></h4>
-  <h1 style="text-align:center;white-space:pre-wrap;">Ready for the Next Chair</h1>
+  <h1 style="text-align:left;white-space:pre-wrap;">Ready for the Next Chair</h1>
   <hr />
   <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Incorruptible Corporations</span></h4>
-  <h1 style="text-align:center;white-space:pre-wrap;">Build a Company That Stays True</h1>
+  <h1 style="text-align:left;white-space:pre-wrap;">Build a Company That Stays True</h1>
 <section>
   <hr />
 
 
 
-<p style="font-family: 'Helvetica Neue', Inter, Arial, sans-serif; text-align: center; white-space: pre-wrap; font-size: 1.5rem;"><span style="display:block;">To win, you need someone who has sat in your chair, and can take you further.</span><span style="display:block; margin-top:0.6em;">Get the strategy right. Then help you execute relentlessly.</span><span style="display:block; margin-top:0.6em;">Succeed faster with continuous coaching from Greg Biggers.</span></p>
+<p style="font-family: 'Helvetica Neue', Inter, Arial, sans-serif; text-align: center; white-space: pre-wrap; font-size: 1.5rem; padding-top: 1.5rem;"><span style="display:block;">To win, you need someone who has sat in your chair, and can take you further.</span><span style="display:block; margin-top:0.6em;">Get the strategy right. Then help you execute relentlessly.</span><span style="display:block; margin-top:0.6em;">Succeed faster with continuous coaching from Greg Biggers.</span></p>
 
 
 </section>
