@@ -65,6 +65,9 @@
 
   /* closing lines: space above the first line (below the rule) matches the space below the button (the section's bottom padding) */
   .page-section.dark-bold p[style*="padding-top: 1.5rem"] { padding-top: 6.6vmax !important; }
+
+  /* closing lines: larger, scaling down on phones */
+  p[style*="font-size: 1.5rem"] { font-size: clamp(1.25rem, 3.2vw, 1.9rem) !important; line-height: 1.35; }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:ital,wght@0,600;0,700&family=Roboto+Mono:ital,wght@0,700;1,700"><script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
