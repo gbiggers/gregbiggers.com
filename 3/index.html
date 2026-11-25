@@ -316,6 +316,8 @@ pre code a {
 .dark-bold h1 { --heading-1-size-value: 3.4; }
 /* Hero rules: one solid 2px line in the accent lime at half strength, instead of the browser's default double stroke. */
 .dark-bold .sqs-html-content hr { border: 0; background-color: hsla(var(--accent-hsl), 0.5); }
+/* Hero list: tighter top spacing on larger screens (the header is fixed, so some clearance stays). */
+@media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: max(24px, calc(6.6vmax - 45px)) !important; } }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
@@ -1593,7 +1595,6 @@ pre code a {
       <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-67ee5a37a696465965e7effd"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-c522a388e616a4bb95b2"><div class="sqs-block-content">
 
 <div class="sqs-html-content">
-  <hr />
   <h4 class="v2-label" style="text-align:left;white-space:pre-wrap;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:#fff;"><span class="v2-label-pre">Continuous</span><span>Strategy &amp; Execution</span></h4>
   <h1 style="text-align:left;white-space:pre-wrap;">Winning Strategy, Operationalized</h1>
   <hr />
