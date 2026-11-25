@@ -314,6 +314,8 @@ pre code a {
 .dark-bold .v2-label-pre + span { padding-left: 0.6em; }
 /* Hero list: rules run the full content width; the serif headlines are a little smaller (size 4 -> 3.4 on the site's heading scale). */
 .dark-bold h1 { --heading-1-size-value: 3.4; }
+/* Hero rules: one solid 2px line in the accent lime at half strength, instead of the browser's default double stroke. */
+.dark-bold .sqs-html-content hr { border: 0; background-color: hsla(var(--accent-hsl), 0.5); }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
