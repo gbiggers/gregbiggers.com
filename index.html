@@ -65,6 +65,11 @@
 
   /* closing lines: space above the first line (below the rule) matches the space below the button (the section's bottom padding) */
   .page-section.dark-bold p[style*="padding-top: 1.5rem"] { padding-top: 6.6vmax !important; }
+
+  /* balanced line breaks for headings, so phones don't strand a single word */
+  h1, h2 { text-wrap: balance; }
+  /* phone: slightly smaller so "I help bold, / ambitious builders / who want more" breaks by phrase */
+  @media (max-width: 767px) { h2.v2-lead-h2 { font-size: min(9.4vw, 3.2rem); } }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:ital,wght@0,600;0,700&family=Roboto+Mono:ital,wght@0,700;1,700"><script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
@@ -1801,7 +1806,7 @@ pre code a {
       <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-67ee5a37a696465965e7f001"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-f7a1592261c651e34699"><div class="sqs-block-content"></div></div><div class="sqs-block website-component-block sqs-block-website-component sqs-block-spacer spacer-block sized vsize-1" data-aspect-ratio="1.6176470588235294" data-block-css="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.spacer/ae5f26c3-c7dd-434f-9f9b-b93c47e722f4_98/website.components.spacer.styles.css&quot;]" data-block-scripts="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.spacer/ae5f26c3-c7dd-434f-9f9b-b93c47e722f4_98/website.components.spacer.visitor.js&quot;]" data-block-type="1337" data-definition-name="website.components.spacer" id="block-00eac23d9fd7d9d64651"><div class="sqs-block-content">&nbsp;</div></div><div class="row sqs-row"><div class="col sqs-col-5 span-5"><div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-0bb22efc7e8a2784a257"><div class="sqs-block-content">
 
 <div class="sqs-html-content">
-  <h2 style="white-space:pre-wrap;">I help bold, ambitious builders who want more</h2>
+  <h2 class="v2-lead-h2" style="white-space:pre-wrap;">I help bold, ambitious builders who want more</h2>
 </div>
 
 
