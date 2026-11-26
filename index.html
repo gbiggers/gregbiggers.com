@@ -67,6 +67,7 @@
   /* ===== Closing lines ===== */
   /* closing lines: space above the first line (below the rule) matches the space below the button (the section's bottom padding) */
   .page-section.dark-bold p[style*="padding-top: 1.5rem"] { padding-top: 6.6vmax !important; }
+  @media (min-width: 1100px) { .page-section.dark-bold p[style*="padding-top: 1.5rem"] { max-width: 26em; margin-left: auto !important; margin-right: auto !important; text-wrap: balance; } }
 
   /* closing lines: larger, scaling down on phones */
   p[style*="font-size: 1.5rem"] { font-size: clamp(1.25rem, 3.2vw, 1.9rem) !important; line-height: 1.35; }
