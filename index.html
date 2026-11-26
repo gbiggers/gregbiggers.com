@@ -44,6 +44,36 @@
 <script type="text/javascript" src="https://use.typekit.net/ik/V_VxMXnbnX1NY8bZgQdT55x6BW7mMPWHbP2ySY56UYwfeGMIfFHN4UJLFRbh52jhWDj3wQqkjRF8jR8qF2mRF2MkwQ9Dw2Jows74MkG0jAFu-WsoShFGZAsude80ZkoRdhXCHKoyjamTiY8Djhy8ZYmC-Ao1Oco8if37OcBDOcu8OfG0daZydfundhBCjPun-YbXO1FUiABkZWF3jAF8OcFzdP37O1FUiABkZWF3jAF8ShFGZAsude80ZkoRdhXCjAFu-WsoShFGZAsude80ZkoRdhXCjAFu-WsoShFGZAsude80Zko0ZWbCjWw0dA9CZcUzScBqZWZC-At0jhNlOeUzjhBC-eNDifUzicBCOAlzjAUyOAlGi2b0SaBujW48Sagyjh90jhNlOYFUiABkZWF3jAF8ShFGZAsude80ZkoRdhXCiaiaOcBRiA8XpWFR-emqiAUTdcS0jhNlOYiaikoyjamTiY8Djhy8ZYmC-Ao1Oco8ifUaiaS0jWw0dA9CiaiaOcZCda4yZemhde80OcFzdPUaiaS0daZydfundhBCjPun-YbXO1FUiABkZWF3jAF8OcFzdPUaiaS0SaBujW48SagyjhmDjhy8ZYmC-Ao1OcFzdPJHjAFudA80OWgkdkGHfw_OMsMMeMb6MKGHfwDOMsMMeM96MKGHfwWOMsMMeMS6MKGHfwROMsMMeMt6MKGHfwdOMsMMegI6MTMgqlDIc6j.js" async fetchpriority="high" onload="try{Typekit.load();}catch(e){} document.documentElement.classList.remove('wf-loading');"></script>
 <script>document.documentElement.classList.add('wf-loading')</script>
 <style>@keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; }
+
+  /* ===== Theme: colours ===== */
+  /* forest unified, cream headlines, mint-gray labels, lime reserved for accents */
+  :root:root { --darkAccent-hsl: 162, 58%, 13%; --white-hsl: 48, 30%, 97%; --black-hsl: 160, 40%, 16%; }
+  .dark-bold h1 { color: hsl(48, 38%, 94%); }
+  .dark-bold h4.v2-label { color: hsl(160, 20%, 72%) !important; }
+  .page-section.dark-bold .sqs-html-content hr { background-color: hsla(48, 38%, 94%, 0.18); }
+  .page-section.dark-bold p span span[style*="Roboto Mono"] { color: hsl(var(--accent-hsl)); }
+
+  /* ===== Hero list ===== */
+  /* hero list sized to the viewport height so all five rows fit above the fold (desktop/tablet) */
+  @media (min-width: 768px) {
+    /* tighter top spacing (the header is fixed, so some clearance stays) */
+    .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: 4px !important; }
+    .page-section.dark-bold h1 { font-size: clamp(1.4rem, calc((100vh - var(--v2-hh, 8rem)) * 0.072), 3.4rem) !important; margin-top: clamp(0.25rem, calc((100vh - var(--v2-hh, 8rem)) * 0.012), 2rem) !important; margin-bottom: clamp(0.35rem, calc((100vh - var(--v2-hh, 8rem)) * 0.019), 2rem) !important; }
+    .page-section.dark-bold h4.v2-label { font-size: clamp(0.7rem, calc((100vh - var(--v2-hh, 8rem)) * 0.021), 1.5rem) !important; margin-top: clamp(0.4rem, calc((100vh - var(--v2-hh, 8rem)) * 0.015), 2rem) !important; margin-bottom: 0 !important; }
+    .page-section.dark-bold .sqs-html-content > h4.v2-label:first-child { margin-top: 0.75rem !important; }
+    .page-section.dark-bold h1 a { padding-bottom: 0.2em; }
+    .page-section.dark-bold .sqs-html-content hr { margin-top: clamp(0.25rem, 1vh, 1.25rem); margin-bottom: 0; }
+  }
+
+  /* ===== Closing lines ===== */
+  /* closing lines: space above the first line (below the rule) matches the space below the button (the section's bottom padding) */
+  .page-section.dark-bold p[style*="padding-top: 1.5rem"] { padding-top: 6.6vmax !important; }
+
+  /* closing lines: larger, scaling down on phones */
+  p[style*="font-size: 1.5rem"] { font-size: clamp(1.25rem, 3.2vw, 1.9rem) !important; line-height: 1.35; }
+
+
+  /* ===== Pull quotes ===== */
   /* pull-quotes */
   .sqs-html-content p.v2-quote { font-family: 'Inknut Antiqua', serif; font-size: 1.3rem; line-height: 1.5; color: hsl(var(--darkAccent-hsl)); text-align: left; margin: 1.75rem 0 0 0 !important; padding: 0.15rem 0 0.6rem 1.4rem; border-left: 6px solid hsl(var(--accent-hsl)); text-indent: -0.45em; }
   .sqs-html-content p.v2-quote + p { margin: 0 0 1.75em 0 !important; padding: 0 0 0.15rem 1.4rem; border-left: 6px solid hsl(var(--accent-hsl)); }
@@ -51,36 +81,20 @@
   /* phones: the label/heading stack sits right above the body, so give a top-of-body quote some air */
   @media (max-width: 767px) { .sqs-html-content p.v2-quote:first-child { margin-top: 1.5rem !important; } }
 
+
+  /* ===== Pane layout ===== */
   /* Sticky pane labels (desktop): the label column stays pinned under the header until the next pane arrives. */
   @media (min-width: 768px) {
     .fe-block-67ee7183fce371d01d81e4c1 { grid-row: 5 / -1 !important; align-self: start; position: sticky; top: calc(var(--v2-hh, 5rem) + 1.5rem); }
   }
 
-  /* forest unified, cream headlines, mint-gray labels, lime reserved for accents */
-  :root:root { --darkAccent-hsl: 162, 58%, 13%; --white-hsl: 48, 30%, 97%; --black-hsl: 160, 40%, 16%; }
-  .dark-bold h1 { color: hsl(48, 38%, 94%); }
-  .dark-bold h4.v2-label { color: hsl(160, 20%, 72%) !important; }
-  .page-section.dark-bold .sqs-html-content hr { background-color: hsla(48, 38%, 94%, 0.18); }
-  .page-section.dark-bold p span span[style*="Roboto Mono"] { color: hsl(var(--accent-hsl)); }
   /* the first sub-heading in a pane body shouldn't add top space, so every pane's body starts at the same height */
   .sqs-html-content > h4:first-child:not(.v2-label) { margin-top: 0 !important; }
 
-  /* closing lines: space above the first line (below the rule) matches the space below the button (the section's bottom padding) */
-  .page-section.dark-bold p[style*="padding-top: 1.5rem"] { padding-top: 6.6vmax !important; }
 
+  /* ===== Headings ===== */
   /* balanced line breaks for headings, so phones don't strand a single word */
   h1, h2 { text-wrap: balance; }
-  /* closing lines: larger, scaling down on phones */
-  p[style*="font-size: 1.5rem"] { font-size: clamp(1.25rem, 3.2vw, 1.9rem) !important; line-height: 1.35; }
-
-  /* hero list sized to the viewport height so all five rows fit above the fold (desktop/tablet) */
-  @media (min-width: 768px) {
-    .page-section.dark-bold h1 { font-size: clamp(1.4rem, calc((100vh - var(--v2-hh, 8rem)) * 0.072), 3.4rem) !important; margin-top: clamp(0.25rem, calc((100vh - var(--v2-hh, 8rem)) * 0.012), 2rem) !important; margin-bottom: clamp(0.35rem, calc((100vh - var(--v2-hh, 8rem)) * 0.019), 2rem) !important; }
-    .page-section.dark-bold h4.v2-label { font-size: clamp(0.7rem, calc((100vh - var(--v2-hh, 8rem)) * 0.021), 1.5rem) !important; margin-top: clamp(0.4rem, calc((100vh - var(--v2-hh, 8rem)) * 0.015), 2rem) !important; margin-bottom: 0 !important; }
-    .page-section.dark-bold .sqs-html-content > h4.v2-label:first-child { margin-top: 0.75rem !important; }
-    .page-section.dark-bold h1 a { padding-bottom: 0.2em; }
-    .page-section.dark-bold .sqs-html-content hr { margin-top: clamp(0.25rem, 1vh, 1.25rem); margin-bottom: 0; }
-  }
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:ital,wght@0,600;0,700&family=Roboto+Mono:ital,wght@0,700;1,700"><script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
@@ -104,17 +118,12 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <style>
-/* Force button rounded corners across all browsers */
+/* Buttons: consistent rounded corners, padding and centering across browsers. */
 .sqs-block-button-element--medium,
 .sqs-button-element--primary,
 .sqs-block-button-element {
   border-radius: 8px !important;
-  -webkit-border-radius: 8px !important;
-  -moz-border-radius: 8px !important;
-  border-radius: 8px !important;
 }
-
-/* Ensure button styling is consistent */
 .sqs-block-button-element--medium.sqs-button-element--primary {
   display: inline-block !important;
   padding: 12px 24px !important;
@@ -122,21 +131,8 @@
   border: none !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
 }
-
-/* Force button appearance on mobile and Chrome */
-@media (max-width: 767px), 
-       (-webkit-min-device-pixel-ratio: 0) {
-  .sqs-block-button-element--medium.sqs-button-element--primary {
-    border-radius: 8px !important;
-    -webkit-border-radius: 8px !important;
-    -moz-border-radius: 8px !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-  }
-}
-
-/* Force button centering across all browsers */
 .sqs-block-button-container--center {
   text-align: center !important;
   display: flex !important;
@@ -144,26 +140,10 @@
   align-items: center !important;
   width: 100% !important;
 }
-
 .sqs-block-button-container--center .sqs-block-button-element {
   margin: 0 auto !important;
   display: inline-block !important;
-}
-
-/* Ensure centering works on mobile and Chrome */
-@media (max-width: 767px), 
-       (-webkit-min-device-pixel-ratio: 0) {
-  .sqs-block-button-container--center {
-    text-align: center !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  
-  .sqs-block-button-container--center .sqs-block-button-element {
-    margin: 0 auto !important;
-    float: none !important;
-  }
+  float: none !important;
 }
 
 /* "I help bold, ambitious builders..." section uses Squarespace's older
@@ -202,9 +182,7 @@
 pre code a {
   word-spacing: -0.3em;
 }
-</style>
 
-  <style>
 /* V2 desktop header: sticky, two rows (always shown in full).
    Row 1: site title (left) + "Let's talk" button (right). Row 2: section links.
    Only applies when Squarespace shows the desktop header (not phones / small tablets). */
@@ -349,10 +327,9 @@ pre code a {
 /* The divider is a rule, not a "|" character, so it spans both lines when the heading wraps. */
 .dark-bold .v2-label-pre { white-space: nowrap; flex: none; padding-right: 0.6em; border-right: 2px solid currentColor; }
 .dark-bold .v2-label-pre + span { padding-left: 0.6em; }
-/* Hero list: rules run the full content width; the serif headlines are a little smaller (size 4 -> 3.4 on the site's heading scale). */
+/* Hero list: rules run the full content width and are one solid 2px line (colour set in the theme block), not the browser's default double stroke; the serif headlines are a little smaller (size 4 -> 3.4 on the site's heading scale). */
 .dark-bold h1 { --heading-1-size-value: 3.4; }
-/* Hero rules: one solid 2px line in the accent lime at half strength, instead of the browser's default double stroke. */
-.dark-bold .sqs-html-content hr { border: 0; background-color: hsla(var(--accent-hsl), 0.5); }
+.dark-bold .sqs-html-content hr { border: 0; }
 /* Hero headlines link to their sections: keep the lime, no underline until hover/focus. */
 /* The headline underline is a background line at the bottom of the link's box, not text-decoration, so it sits below the descenders (g, p, y) instead of cutting through them. */
 .dark-bold h1 a { color: inherit; text-decoration: none; display: inline-block; line-height: 1.15; padding-bottom: 0.32em; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 2px; transition: background-size 0.15s ease; }
@@ -360,8 +337,6 @@ pre code a {
 /* Hero labels link too: the <a> carries the label's row layout (name | section), inherits the white, underlines on hover/focus. */
 .dark-bold .v2-label > a { display: flex; flex-direction: row; align-items: stretch; color: inherit; text-decoration: none; }
 .dark-bold .v2-label > a:hover span:not(.v2-label-pre), .dark-bold .v2-label > a:focus-visible span:not(.v2-label-pre) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
-/* Hero list: tighter top spacing on larger screens (the header is fixed, so some clearance stays). */
-@media (min-width: 768px) { .page-section[data-section-id="67ee5a37a696465965e7effd"] > .content-wrapper { padding-top: 4px !important; } }
 /* Hamburger menu: keep the header dark green but make the link list white with dark green links,
    and show "Let's talk" as a compact dark green button with lime text. */
 :root, .header, .header-menu {
