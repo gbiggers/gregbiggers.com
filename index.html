@@ -77,6 +77,7 @@
   .sqs-html-content p.v2-quote { font-family: 'Inknut Antiqua', serif; font-size: 1.3rem; line-height: 1.5; color: hsl(var(--darkAccent-hsl)); text-align: left; margin: 1.75rem 0 0 0 !important; padding: 0.15rem 0 0.6rem 1.4rem; border-left: 6px solid hsl(var(--accent-hsl)); text-indent: -0.45em; }
   .sqs-html-content p.v2-quote + p { margin: 0 0 1.75em 0 !important; padding: 0 0 0.15rem 1.4rem; border-left: 6px solid hsl(var(--accent-hsl)); }
   .sqs-html-content p.v2-quote:first-child { margin-top: 0 !important; }
+  .sqs-html-content p.v2-quote { text-wrap: balance; }
   /* phones: the label/heading stack sits right above the body, so give a top-of-body quote some air */
   @media (max-width: 767px) { .sqs-html-content p.v2-quote:first-child { margin-top: 1.5rem !important; } }
 
@@ -90,6 +91,12 @@
   /* the first sub-heading in a pane body shouldn't add top space, so every pane's body starts at the same height */
   .sqs-html-content > h4:first-child:not(.v2-label) { margin-top: 0 !important; }
 
+
+  /* tablets (768-1100px): give the body one more grid column, taken from the label column and the gap, so panels run shorter */
+  @media (min-width: 768px) and (max-width: 1100px) {
+    .fe-block-67ee7183fce371d01d81e4c1 { grid-column: 2 / 11 !important; }
+    .fe-block-67ee71839b13b5d7c08e1c32 { grid-column: 12 / 26 !important; }
+  }
 
   /* ===== Headings ===== */
   /* balanced line breaks for headings, so phones don't strand a single word */
@@ -3711,7 +3718,7 @@ pre code a {
 </div></div></div><div class="fe-block fe-block-67ee71839b13b5d7c08e1c32"><div class="sqs-block html-block sqs-block-html" data-blend-mode="NORMAL" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" id="block-67ee71839b13b5d7c08e1c32"><div class="sqs-block-content">
 
 <div class="sqs-html-content">
-  <p class="v2-quote" style="white-space: pre-wrap;">“I taught people how to build something worth protecting—but not how to protect it.”</p>
+  <p class="v2-quote" style="white-space: pre-wrap;">“I taught people how to build something worth <span style="white-space: nowrap;">protecting—but</span> not how to protect it.”</p>
   <p style="text-align:left;font-family:'Roboto Mono', monospace;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;font-size:0.85rem;margin:0 0 1.5em;word-spacing:-0.4em;">—Eric Ries, <em>Incorruptible</em></p>
   <p style="font-family: 'Helvetica Neue', Inter, Arial, sans-serif; text-align: left; white-space: pre-wrap;"><strong>Everyone wants a company that stays true to its mission—few build the structures that make it last.</strong></p>
   <p style="font-family: 'Helvetica Neue', Inter, Arial, sans-serif; text-align: left; white-space: pre-wrap;">Enthusiasm for the Eric Ries book, <em>Incorruptible</em>, is widespread and growing. We harness that enthusiasm and guide it into execution.</p>
